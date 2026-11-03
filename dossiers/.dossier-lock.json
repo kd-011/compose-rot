@@ -1,0 +1,353 @@
+{
+  "version": 1,
+  "docs": {
+    "compose-rot": {
+      "claims": {
+        "ef1c29ff5668": {
+          "text": "Runs on Node 22 or newer and installs one command, `compose-rot`.",
+          "line": 14,
+          "specs": [
+            "package.json:12",
+            "package.json:14"
+          ],
+          "head": "eba5f6693245ec48d2b5fb64f70cac272decb08e",
+          "files": {
+            "package.json": {
+              "path": "package.json",
+              "blob": "c688ee8fd475352594e7292521d5ee8b6ed8295d",
+              "commit": "fab61cbebb00bf0cfdd8b5a00d3b90762dd72425",
+              "range": {
+                "start": 12,
+                "end": 12,
+                "hash": "9863584d60c3b613a7b5e5f38e8264de91e62359"
+              }
+            },
+            "package.json:14-14": {
+              "path": "package.json",
+              "blob": "c688ee8fd475352594e7292521d5ee8b6ed8295d",
+              "commit": "fab61cbebb00bf0cfdd8b5a00d3b90762dd72425",
+              "range": {
+                "start": 14,
+                "end": 14,
+                "hash": "67a4ba2e9f1db54928caa00e148ef448613104e4"
+              }
+            }
+          }
+        },
+        "888b73a77d98": {
+          "text": "Has no runtime or development dependencies, only Node built-ins.",
+          "line": 15,
+          "specs": [
+            "package.json"
+          ],
+          "head": "eba5f6693245ec48d2b5fb64f70cac272decb08e",
+          "files": {
+            "package.json": {
+              "path": "package.json",
+              "blob": "c688ee8fd475352594e7292521d5ee8b6ed8295d",
+              "commit": "fab61cbebb00bf0cfdd8b5a00d3b90762dd72425"
+            }
+          }
+        },
+        "1c24158bddd3": {
+          "text": "Finds compose files by name (`compose.yml`, `docker-compose*.yml`, `*.compose.yml`, either spelling of the extension), skips `node_modules` and `.git`, and d...",
+          "line": 16,
+          "specs": [
+            "src/find.mjs:5-6",
+            "src/find.mjs:39-42"
+          ],
+          "head": "eba5f6693245ec48d2b5fb64f70cac272decb08e",
+          "files": {
+            "src/find.mjs": {
+              "path": "src/find.mjs",
+              "blob": "7628b60e1887a91553a134a8d6ba0dc69ee22a55",
+              "commit": "d7da28ff344d5d91bbf68394038d279ac73ff68a",
+              "range": {
+                "start": 5,
+                "end": 6,
+                "hash": "64719c5e77b1f699b9fc77c60b6885d921627e6c"
+              }
+            },
+            "src/find.mjs:39-42": {
+              "path": "src/find.mjs",
+              "blob": "7628b60e1887a91553a134a8d6ba0dc69ee22a55",
+              "commit": "d7da28ff344d5d91bbf68394038d279ac73ff68a",
+              "range": {
+                "start": 39,
+                "end": 42,
+                "hash": "7c9e7f0b702b7db3b16469b47c0c4c984590eb2f"
+              }
+            }
+          }
+        },
+        "ff6ce9f37f0b": {
+          "text": "Reads variables for image names from a `.env` file next to the compose file, then from the default written in the file, and never from the shell environment.",
+          "line": 17,
+          "specs": [
+            "src/check.mjs:23-25",
+            "src/compose.mjs:11-12"
+          ],
+          "head": "eba5f6693245ec48d2b5fb64f70cac272decb08e",
+          "files": {
+            "src/check.mjs": {
+              "path": "src/check.mjs",
+              "blob": "7a66958036ab3382b0c8f365d4b993b82b8b4415",
+              "commit": "d7da28ff344d5d91bbf68394038d279ac73ff68a",
+              "range": {
+                "start": 23,
+                "end": 25,
+                "hash": "d8d7559fca908c152a8dec6c4d6f90108a13666c"
+              }
+            },
+            "src/compose.mjs": {
+              "path": "src/compose.mjs",
+              "blob": "4596863658aad2104e20c14c0b5c2b148538b9d9",
+              "commit": "d7da28ff344d5d91bbf68394038d279ac73ff68a",
+              "range": {
+                "start": 11,
+                "end": 12,
+                "hash": "39b0718ad739e7e5461a8cac2d7e42fbfe115567"
+              }
+            }
+          }
+        },
+        "2781bb143d66": {
+          "text": "An image whose registry, namespace or repo is an unresolved variable is listed as unknown and never guessed at.",
+          "line": 18,
+          "specs": [
+            "src/compose.mjs:84-91"
+          ],
+          "head": "eba5f6693245ec48d2b5fb64f70cac272decb08e",
+          "files": {
+            "src/compose.mjs": {
+              "path": "src/compose.mjs",
+              "blob": "4596863658aad2104e20c14c0b5c2b148538b9d9",
+              "commit": "d7da28ff344d5d91bbf68394038d279ac73ff68a",
+              "range": {
+                "start": 84,
+                "end": 91,
+                "hash": "0b7dc8f7c7067484ed235dc9e80f5b18219395a1"
+              }
+            }
+          }
+        },
+        "ebb1be719f37": {
+          "text": "Exits 2 when a file or path could not be read, 1 when there are findings and 0 otherwise.",
+          "line": 19,
+          "specs": [
+            "src/cli.mjs:30-33"
+          ],
+          "head": "eba5f6693245ec48d2b5fb64f70cac272decb08e",
+          "files": {
+            "src/cli.mjs": {
+              "path": "src/cli.mjs",
+              "blob": "aaace055b815a8e97933efacb580bba5fa5c54d9",
+              "commit": "d7da28ff344d5d91bbf68394038d279ac73ff68a",
+              "range": {
+                "start": 30,
+                "end": 33,
+                "hash": "cff0b87d6ca8aff7cbc59a90b18f44c14d005b46"
+              }
+            }
+          }
+        },
+        "d21b05332c7c": {
+          "text": "Online mode takes the upstream from the data file first, then from the registry's source label, and otherwise reports the image as unknown.",
+          "line": 23,
+          "specs": [
+            "src/check.mjs:162-178"
+          ],
+          "head": "eba5f6693245ec48d2b5fb64f70cac272decb08e",
+          "files": {
+            "src/check.mjs": {
+              "path": "src/check.mjs",
+              "blob": "7a66958036ab3382b0c8f365d4b993b82b8b4415",
+              "commit": "d7da28ff344d5d91bbf68394038d279ac73ff68a",
+              "range": {
+                "start": 162,
+                "end": 178,
+                "hash": "2b27453ecbf5f24f93ccc7d41109103af080fea2"
+              }
+            }
+          }
+        },
+        "bcea1849dbc9": {
+          "text": "`GITHUB_TOKEN` is sent to the GitHub API client only.",
+          "line": 24,
+          "specs": [
+            "src/github.mjs:19"
+          ],
+          "head": "eba5f6693245ec48d2b5fb64f70cac272decb08e",
+          "files": {
+            "src/github.mjs": {
+              "path": "src/github.mjs",
+              "blob": "c87c04846efd832d321edce64c520d30f5a92d24",
+              "commit": "d7da28ff344d5d91bbf68394038d279ac73ff68a",
+              "range": {
+                "start": 19,
+                "end": 19,
+                "hash": "d01b119573cd6950985862a05b28401ac2ee2111"
+              }
+            }
+          }
+        },
+        "024edc9e3f77": {
+          "text": "On a GitHub rate limit it waits up to 60 seconds and retries twice before giving up.",
+          "line": 25,
+          "specs": [
+            "src/github.mjs:2-3",
+            "src/github.mjs:45"
+          ],
+          "head": "eba5f6693245ec48d2b5fb64f70cac272decb08e",
+          "files": {
+            "src/github.mjs": {
+              "path": "src/github.mjs",
+              "blob": "c87c04846efd832d321edce64c520d30f5a92d24",
+              "commit": "d7da28ff344d5d91bbf68394038d279ac73ff68a",
+              "range": {
+                "start": 2,
+                "end": 3,
+                "hash": "ccfa2647827971d43cd409311dd63b12527e4999"
+              }
+            },
+            "src/github.mjs:45-45": {
+              "path": "src/github.mjs",
+              "blob": "c87c04846efd832d321edce64c520d30f5a92d24",
+              "commit": "d7da28ff344d5d91bbf68394038d279ac73ff68a",
+              "range": {
+                "start": 45,
+                "end": 45,
+                "hash": "b765aa941e45cdb67181950a8d49e34293c30ce3"
+              }
+            }
+          }
+        },
+        "e88f5c471edd": {
+          "text": "A data entry without an https source URL, a checked date and a verified timestamp is rejected.",
+          "line": 26,
+          "specs": [
+            "src/known.mjs:16-40"
+          ],
+          "head": "eba5f6693245ec48d2b5fb64f70cac272decb08e",
+          "files": {
+            "src/known.mjs": {
+              "path": "src/known.mjs",
+              "blob": "0cb1b58f2d42ff5293e9b54a8d93b8908bb6fc79",
+              "commit": "d7da28ff344d5d91bbf68394038d279ac73ff68a",
+              "range": {
+                "start": 16,
+                "end": 40,
+                "hash": "0f3393e66e8b0f213e99ae9ac4fb782a882f5ef0"
+              }
+            }
+          }
+        },
+        "357b392248ab": {
+          "text": "The licences reported as NON_OSI come from `data/non-open-licences.json`.",
+          "line": 27,
+          "specs": [
+            "src/known.mjs:64-68"
+          ],
+          "head": "eba5f6693245ec48d2b5fb64f70cac272decb08e",
+          "files": {
+            "src/known.mjs": {
+              "path": "src/known.mjs",
+              "blob": "0cb1b58f2d42ff5293e9b54a8d93b8908bb6fc79",
+              "commit": "d7da28ff344d5d91bbf68394038d279ac73ff68a",
+              "range": {
+                "start": 64,
+                "end": 68,
+                "hash": "215b391ba483d8d67b959b1dd01d0afc24a20940"
+              }
+            }
+          }
+        },
+        "f7bc51d026e6": {
+          "text": "A file larger than 5 MB is not read.",
+          "line": 28,
+          "specs": [
+            "src/check.mjs:12",
+            "src/check.mjs:88"
+          ],
+          "head": "eba5f6693245ec48d2b5fb64f70cac272decb08e",
+          "files": {
+            "src/check.mjs": {
+              "path": "src/check.mjs",
+              "blob": "7a66958036ab3382b0c8f365d4b993b82b8b4415",
+              "commit": "d7da28ff344d5d91bbf68394038d279ac73ff68a",
+              "range": {
+                "start": 12,
+                "end": 12,
+                "hash": "773a8fb93de05be97ea1a23867aad8fba059d233"
+              }
+            },
+            "src/check.mjs:88-88": {
+              "path": "src/check.mjs",
+              "blob": "7a66958036ab3382b0c8f365d4b993b82b8b4415",
+              "commit": "d7da28ff344d5d91bbf68394038d279ac73ff68a",
+              "range": {
+                "start": 88,
+                "end": 88,
+                "hash": "afe45ab04d0d43048ed17d3a1a9650e05fa11a4d"
+              }
+            }
+          }
+        },
+        "764bd69033c6": {
+          "text": "CI runs `node --test` on Node 22 and 24 for every pull request and once a week.",
+          "line": 32,
+          "specs": [
+            ".github/workflows/ci.yml:3-12",
+            ".github/workflows/ci.yml:24"
+          ],
+          "head": "eba5f6693245ec48d2b5fb64f70cac272decb08e",
+          "files": {
+            ".github/workflows/ci.yml": {
+              "path": ".github/workflows/ci.yml",
+              "blob": "7c3a27a5fb744b6cd60b652c2754b8a8f0cc4923",
+              "commit": "d7da28ff344d5d91bbf68394038d279ac73ff68a",
+              "range": {
+                "start": 3,
+                "end": 12,
+                "hash": "f9642124e6a3c8943f6611275d3189729405fde2"
+              }
+            },
+            ".github/workflows/ci.yml:24-24": {
+              "path": ".github/workflows/ci.yml",
+              "blob": "7c3a27a5fb744b6cd60b652c2754b8a8f0cc4923",
+              "commit": "d7da28ff344d5d91bbf68394038d279ac73ff68a",
+              "range": {
+                "start": 24,
+                "end": 24,
+                "hash": "15dd520b8b26147365ab494c73091525b65b99af"
+              }
+            }
+          }
+        },
+        "25d772a7b622": {
+          "text": "Dependabot opens grouped weekly updates for GitHub Actions and qualifying ones merge automatically once CI is green.",
+          "line": 33,
+          "specs": [
+            ".github/dependabot.yml",
+            ".github/scripts/automerge-eligible.mjs"
+          ],
+          "head": "eba5f6693245ec48d2b5fb64f70cac272decb08e",
+          "files": {
+            ".github/dependabot.yml": {
+              "path": ".github/dependabot.yml",
+              "blob": "5e3a090199e4384ea98a662632c33699793ce495",
+              "commit": "d7da28ff344d5d91bbf68394038d279ac73ff68a"
+            },
+            ".github/scripts/automerge-eligible.mjs": {
+              "path": ".github/scripts/automerge-eligible.mjs",
+              "blob": "4d76b76561799212bec89214b6695491b6ea0f60",
+              "commit": "d7da28ff344d5d91bbf68394038d279ac73ff68a"
+            }
+          }
+        }
+      },
+      "pinnedAt": "2026-11-03T13:46:14.478Z",
+      "head": "eba5f6693245ec48d2b5fb64f70cac272decb08e"
+    }
+  }
+}
