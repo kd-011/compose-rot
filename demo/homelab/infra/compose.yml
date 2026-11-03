@@ -2,7 +2,7 @@ name: infra
 
 services:
   db:
-    image: bitnami/postgresql:${PG_TAG:-16}
+    image: bitnami/postgresql:${PG_TAG:-15}
     environment:
       - POSTGRESQL_PASSWORD=change-me
 
