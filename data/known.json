@@ -1,0 +1,614 @@
+{
+  "schema": 1,
+  "note": "Every entry cites a page that was opened on the date in sources[].checked. See docs/data.md.",
+  "entries": [
+    {
+      "id": "bitnami",
+      "match": [
+        "docker.io/bitnami/*"
+      ],
+      "kind": "REMOVED",
+      "upstream": "bitnami/containers",
+      "date": "2025-08-28",
+      "summary": "Bitnami moved its free versioned images out of docker.io/bitnami into docker.io/bitnamilegacy on 2025-08-28; the legacy copies are no longer updated",
+      "detail": "The announcement says only a limited set of hardened images stays in the Bitnami public catalogue, for development use, and that deletion of docker.io/bitnami was postponed to 2025-09-29. Linuxiac (2025-08-29) reports the remaining free images are under the latest tag only, in a bitnamisecure namespace, and that older versioned tags need a paid subscription.",
+      "sources": [
+        {
+          "url": "https://github.com/bitnami/containers/issues/83267",
+          "checked": "2026-11-03",
+          "note": "Bitnami announcement, opened 2025-07-16"
+        },
+        {
+          "url": "https://linuxiac.com/bitnami-ends-free-stable-images-users-forced-to-migrate-or-pay/",
+          "checked": "2026-11-03",
+          "note": "Linuxiac, 2025-08-29"
+        }
+      ],
+      "verified": "2026-11-03T13:30:00Z"
+    },
+    {
+      "id": "bitnamilegacy",
+      "match": [
+        "docker.io/bitnamilegacy/*"
+      ],
+      "kind": "DEPRECATED",
+      "upstream": "bitnami/containers",
+      "date": "2025-08-28",
+      "summary": "docker.io/bitnamilegacy holds the images moved out of docker.io/bitnami on 2025-08-28; it gets no further updates or support and is meant for temporary migration only",
+      "sources": [
+        {
+          "url": "https://github.com/bitnami/containers/issues/83267",
+          "checked": "2026-11-03",
+          "note": "Bitnami announcement, opened 2025-07-16"
+        }
+      ],
+      "verified": "2026-11-03T13:30:00Z"
+    },
+    {
+      "id": "minio",
+      "match": [
+        "docker.io/minio/minio",
+        "quay.io/minio/minio"
+      ],
+      "kind": "ARCHIVED",
+      "upstream": "minio/minio",
+      "date": "2026-04-25",
+      "summary": "upstream repo minio/minio archived on 2026-04-25; its README says the repository is no longer maintained",
+      "detail": "Linuxiac (2025-12-05) reports MinIO put the open-source project into maintenance-only mode and had stopped publishing Docker images in mid-October 2025. On 2026-11-03 hub.docker.com/v2/repositories/minio/minio returned 404.",
+      "sources": [
+        {
+          "url": "https://github.com/minio/minio",
+          "checked": "2026-11-03",
+          "note": "repository banner: archived by the owner on Apr 25, 2026; README notice"
+        },
+        {
+          "url": "https://linuxiac.com/minio-ends-active-development/",
+          "checked": "2026-11-03",
+          "note": "Linuxiac, 2025-12-05"
+        }
+      ],
+      "verified": "2026-11-03T13:30:00Z"
+    },
+    {
+      "id": "watchtower",
+      "match": [
+        "docker.io/containrrr/watchtower",
+        "ghcr.io/containrrr/watchtower"
+      ],
+      "kind": "ARCHIVED",
+      "upstream": "containrrr/watchtower",
+      "date": "2025-12-17",
+      "summary": "upstream repo containrrr/watchtower archived on 2025-12-17; the maintainers said they had lost the time and interest to keep it up",
+      "sources": [
+        {
+          "url": "https://github.com/containrrr/watchtower",
+          "checked": "2026-11-03",
+          "note": "repository banner: archived by the owner on Dec 17, 2025"
+        },
+        {
+          "url": "https://github.com/containrrr/watchtower/discussions/2135",
+          "checked": "2026-11-03",
+          "note": "maintainer announcement, 2025-12-17"
+        }
+      ],
+      "verified": "2026-11-03T13:30:00Z"
+    },
+    {
+      "id": "dockhand",
+      "match": [
+        "docker.io/fnsys/dockhand"
+      ],
+      "kind": "NON_OSI",
+      "upstream": "Finsys/dockhand",
+      "date": "2026-09-14",
+      "summary": "Dockhand is licensed under BUSL-1.1, which the OSI has not approved; its licence terms were revised on 2026-09-14 and 2026-10-03",
+      "detail": "The first LICENSE.txt (2025-12-28) was already BUSL-1.1, with the change date fixed at 2029-01-01. The current file moves the change date to four years after each version is first released, and sets out free use and commercial licence terms.",
+      "licence": {
+        "to": "BUSL-1.1"
+      },
+      "sources": [
+        {
+          "url": "https://github.com/Finsys/dockhand/blob/main/LICENSE.txt",
+          "checked": "2026-11-03",
+          "note": "current licence file; history of the file shows revisions on 2026-09-14 and 2026-10-03"
+        },
+        {
+          "url": "https://noted.lol/dockhand-license-changes/",
+          "checked": "2026-11-03",
+          "note": "Noted, 2026-10-10"
+        }
+      ],
+      "verified": "2026-11-03T13:30:00Z"
+    },
+    {
+      "id": "overseerr",
+      "match": [
+        "docker.io/sctx/overseerr"
+      ],
+      "kind": "ARCHIVED",
+      "upstream": "sct/overseerr",
+      "date": "2026-02-15",
+      "summary": "upstream repo sct/overseerr archived on 2026-02-15; its README says Overseerr is being superseded by Seerr",
+      "replacement": {
+        "text": "Seerr (seerr-team/seerr), named in the Overseerr README",
+        "source": "https://github.com/sct/overseerr"
+      },
+      "sources": [
+        {
+          "url": "https://github.com/sct/overseerr",
+          "checked": "2026-11-03",
+          "note": "repository banner: archived by the owner on Feb 15, 2026; README notice"
+        }
+      ],
+      "verified": "2026-11-03T13:30:00Z"
+    },
+    {
+      "id": "linuxserver-overseerr",
+      "match": [
+        "lscr.io/linuxserver/overseerr",
+        "ghcr.io/linuxserver/overseerr",
+        "docker.io/linuxserver/overseerr"
+      ],
+      "kind": "ARCHIVED",
+      "upstream": "linuxserver/docker-overseerr",
+      "date": "2026-07-03",
+      "summary": "the linuxserver/docker-overseerr image repo was archived on 2026-07-03",
+      "replacement": {
+        "text": "Seerr (seerr-team/seerr), named in the Overseerr README",
+        "source": "https://github.com/sct/overseerr"
+      },
+      "sources": [
+        {
+          "url": "https://github.com/linuxserver/docker-overseerr",
+          "checked": "2026-11-03",
+          "note": "repository banner: archived by the owner on Jul 3, 2026"
+        },
+        {
+          "url": "https://github.com/sct/overseerr",
+          "checked": "2026-11-03",
+          "note": "Overseerr README notice"
+        }
+      ],
+      "verified": "2026-11-03T13:30:00Z"
+    },
+    {
+      "id": "linuxserver-readarr",
+      "match": [
+        "lscr.io/linuxserver/readarr",
+        "ghcr.io/linuxserver/readarr",
+        "docker.io/linuxserver/readarr"
+      ],
+      "kind": "ARCHIVED",
+      "upstream": "linuxserver/docker-readarr",
+      "date": "2025-07-06",
+      "summary": "the linuxserver/docker-readarr image repo was archived on 2025-07-06; the Readarr project itself was retired and its repo archived on 2025-06-27",
+      "sources": [
+        {
+          "url": "https://github.com/linuxserver/docker-readarr",
+          "checked": "2026-11-03",
+          "note": "repository banner: archived by the owner on Jul 6, 2025"
+        },
+        {
+          "url": "https://github.com/Readarr/Readarr",
+          "checked": "2026-11-03",
+          "note": "retirement announcement in the README; repository archived on Jun 27, 2025"
+        }
+      ],
+      "verified": "2026-11-03T13:30:00Z"
+    },
+    {
+      "id": "linuxserver-sickchill",
+      "match": [
+        "lscr.io/linuxserver/sickchill",
+        "ghcr.io/linuxserver/sickchill",
+        "docker.io/linuxserver/sickchill"
+      ],
+      "kind": "ARCHIVED",
+      "upstream": "linuxserver/docker-sickchill",
+      "date": "2025-07-10",
+      "summary": "the linuxserver/docker-sickchill image repo was archived on 2025-07-10",
+      "sources": [
+        {
+          "url": "https://github.com/linuxserver/docker-sickchill",
+          "checked": "2026-11-03",
+          "note": "repository banner: archived by the owner on Jul 10, 2025"
+        }
+      ],
+      "verified": "2026-11-03T13:30:00Z"
+    },
+    {
+      "id": "homarr-v0",
+      "match": [
+        "docker.io/ajnart/homarr",
+        "ghcr.io/ajnart/homarr"
+      ],
+      "kind": "ARCHIVED",
+      "upstream": "ajnart/homarr",
+      "date": "2026-06-03",
+      "summary": "upstream repo ajnart/homarr archived on 2026-06-03; the README says the project moved to homarr-labs/homarr with v1 and that the old version gets no updates",
+      "replacement": {
+        "text": "homarr-labs/homarr, v1 and later",
+        "source": "https://github.com/ajnart/homarr"
+      },
+      "sources": [
+        {
+          "url": "https://github.com/ajnart/homarr",
+          "checked": "2026-11-03",
+          "note": "repository banner: archived by the owner on Jun 3, 2026; README notice"
+        }
+      ],
+      "verified": "2026-11-03T13:30:00Z"
+    },
+    {
+      "id": "whoogle",
+      "match": [
+        "docker.io/benbusby/whoogle-search"
+      ],
+      "kind": "ARCHIVED",
+      "upstream": "benbusby/whoogle-search",
+      "date": "2026-08-14",
+      "summary": "upstream repo benbusby/whoogle-search archived on 2026-08-14; the README (dated 2026-07-24) says Whoogle no longer returns search results and active work has ended",
+      "sources": [
+        {
+          "url": "https://github.com/benbusby/whoogle-search",
+          "checked": "2026-11-03",
+          "note": "repository banner: archived by the owner on Aug 14, 2026; README notice"
+        }
+      ],
+      "verified": "2026-11-03T13:30:00Z"
+    },
+    {
+      "id": "nitter",
+      "match": [
+        "docker.io/zedeus/nitter"
+      ],
+      "kind": "ARCHIVED",
+      "upstream": "zedeus/nitter",
+      "date": "2026-10-09",
+      "summary": "upstream repo zedeus/nitter archived on 2026-10-09; the README notes cease and desist letters dated 2026-08-24",
+      "sources": [
+        {
+          "url": "https://github.com/zedeus/nitter",
+          "checked": "2026-11-03",
+          "note": "repository banner: archived by the owner on Oct 9, 2026; README notice"
+        }
+      ],
+      "verified": "2026-11-03T13:30:00Z"
+    },
+    {
+      "id": "oznu-cloudflare-ddns",
+      "match": [
+        "docker.io/oznu/cloudflare-ddns"
+      ],
+      "kind": "ARCHIVED",
+      "upstream": "oznu/docker-cloudflare-ddns",
+      "date": "2022-08-24",
+      "summary": "upstream repo oznu/docker-cloudflare-ddns archived on 2022-08-24",
+      "sources": [
+        {
+          "url": "https://github.com/oznu/docker-cloudflare-ddns",
+          "checked": "2026-11-03",
+          "note": "repository banner: archived by the owner on Aug 24, 2022"
+        }
+      ],
+      "verified": "2026-11-03T13:30:00Z"
+    },
+    {
+      "id": "kaniko",
+      "match": [
+        "gcr.io/kaniko-project/executor"
+      ],
+      "kind": "ARCHIVED",
+      "upstream": "GoogleContainerTools/kaniko",
+      "date": "2025-06-03",
+      "summary": "upstream repo GoogleContainerTools/kaniko archived on 2025-06-03; its README says the project is no longer developed or maintained",
+      "sources": [
+        {
+          "url": "https://github.com/GoogleContainerTools/kaniko",
+          "checked": "2026-11-03",
+          "note": "repository banner: archived by the owner on Jun 3, 2025; README notice"
+        }
+      ],
+      "verified": "2026-11-03T13:30:00Z"
+    },
+    {
+      "id": "filebrowser",
+      "match": [
+        "docker.io/filebrowser/filebrowser"
+      ],
+      "kind": "ARCHIVED",
+      "upstream": "filebrowser/filebrowser",
+      "date": "2026-08-31",
+      "summary": "upstream repo filebrowser/filebrowser archived on 2026-08-31; its README says there will be no further releases, bug fixes or security fixes",
+      "detail": "The README notice gives the archive date as 2026-09-01; the repository banner says Aug 31, 2026. This entry uses the banner date.",
+      "sources": [
+        {
+          "url": "https://github.com/filebrowser/filebrowser",
+          "checked": "2026-11-03",
+          "note": "repository banner: archived by the owner on Aug 31, 2026; README notice"
+        }
+      ],
+      "verified": "2026-11-03T13:30:00Z"
+    },
+    {
+      "id": "vault",
+      "match": [
+        "docker.io/hashicorp/vault"
+      ],
+      "kind": "RELICENSED",
+      "upstream": "hashicorp/vault",
+      "date": "2023-08-10",
+      "summary": "HashiCorp changed the licence of vault from MPL-2.0 to BUSL-1.1 for releases from 1.15.0 on, announced 2023-08-10",
+      "detail": "The LICENSE file in hashicorp/vault names Vault version 1.15.0 or later as the licensed work under the Business Source License 1.1; the current licensor is IBM. Earlier releases stay under MPL-2.0.",
+      "licence": {
+        "from": "MPL-2.0",
+        "to": "BUSL-1.1"
+      },
+      "affects": {
+        "from": "1.15.0"
+      },
+      "sources": [
+        {
+          "url": "https://www.hashicorp.com/en/blog/hashicorp-adopts-business-source-license",
+          "checked": "2026-11-03",
+          "note": "HashiCorp announcement, 2023-08-10"
+        },
+        {
+          "url": "https://github.com/hashicorp/vault/blob/main/LICENSE",
+          "checked": "2026-11-03",
+          "note": "licensed work: version 1.15.0 or later"
+        }
+      ],
+      "verified": "2026-11-03T13:30:00Z"
+    },
+    {
+      "id": "consul",
+      "match": [
+        "docker.io/hashicorp/consul"
+      ],
+      "kind": "RELICENSED",
+      "upstream": "hashicorp/consul",
+      "date": "2023-08-10",
+      "summary": "HashiCorp changed the licence of consul from MPL-2.0 to BUSL-1.1 for releases from 1.17.0 on, announced 2023-08-10",
+      "detail": "The LICENSE file in hashicorp/consul names Consul version 1.17.0 or later as the licensed work under the Business Source License 1.1; the current licensor is IBM. Earlier releases stay under MPL-2.0.",
+      "licence": {
+        "from": "MPL-2.0",
+        "to": "BUSL-1.1"
+      },
+      "affects": {
+        "from": "1.17.0"
+      },
+      "sources": [
+        {
+          "url": "https://www.hashicorp.com/en/blog/hashicorp-adopts-business-source-license",
+          "checked": "2026-11-03",
+          "note": "HashiCorp announcement, 2023-08-10"
+        },
+        {
+          "url": "https://github.com/hashicorp/consul/blob/main/LICENSE",
+          "checked": "2026-11-03",
+          "note": "licensed work: version 1.17.0 or later"
+        }
+      ],
+      "verified": "2026-11-03T13:30:00Z"
+    },
+    {
+      "id": "terraform",
+      "match": [
+        "docker.io/hashicorp/terraform"
+      ],
+      "kind": "RELICENSED",
+      "upstream": "hashicorp/terraform",
+      "date": "2023-08-10",
+      "summary": "HashiCorp changed the licence of terraform from MPL-2.0 to BUSL-1.1 for releases from 1.6.0 on, announced 2023-08-10",
+      "detail": "The LICENSE file in hashicorp/terraform names Terraform version 1.6.0 or later as the licensed work under the Business Source License 1.1; the current licensor is IBM. Earlier releases stay under MPL-2.0.",
+      "licence": {
+        "from": "MPL-2.0",
+        "to": "BUSL-1.1"
+      },
+      "affects": {
+        "from": "1.6.0"
+      },
+      "sources": [
+        {
+          "url": "https://www.hashicorp.com/en/blog/hashicorp-adopts-business-source-license",
+          "checked": "2026-11-03",
+          "note": "HashiCorp announcement, 2023-08-10"
+        },
+        {
+          "url": "https://github.com/hashicorp/terraform/blob/main/LICENSE",
+          "checked": "2026-11-03",
+          "note": "licensed work: version 1.6.0 or later"
+        }
+      ],
+      "verified": "2026-11-03T13:30:00Z"
+    },
+    {
+      "id": "nomad",
+      "match": [
+        "docker.io/hashicorp/nomad"
+      ],
+      "kind": "RELICENSED",
+      "upstream": "hashicorp/nomad",
+      "date": "2023-08-10",
+      "summary": "HashiCorp changed the licence of nomad from MPL-2.0 to BUSL-1.1 for releases from 1.7.0 on, announced 2023-08-10",
+      "detail": "The LICENSE file in hashicorp/nomad names Nomad version 1.7.0 or later as the licensed work under the Business Source License 1.1; the current licensor is IBM. Earlier releases stay under MPL-2.0.",
+      "licence": {
+        "from": "MPL-2.0",
+        "to": "BUSL-1.1"
+      },
+      "affects": {
+        "from": "1.7.0"
+      },
+      "sources": [
+        {
+          "url": "https://www.hashicorp.com/en/blog/hashicorp-adopts-business-source-license",
+          "checked": "2026-11-03",
+          "note": "HashiCorp announcement, 2023-08-10"
+        },
+        {
+          "url": "https://github.com/hashicorp/nomad/blob/main/LICENSE",
+          "checked": "2026-11-03",
+          "note": "licensed work: version 1.7.0 or later"
+        }
+      ],
+      "verified": "2026-11-03T13:30:00Z"
+    },
+    {
+      "id": "packer",
+      "match": [
+        "docker.io/hashicorp/packer"
+      ],
+      "kind": "RELICENSED",
+      "upstream": "hashicorp/packer",
+      "date": "2023-08-10",
+      "summary": "HashiCorp changed the licence of packer from MPL-2.0 to BUSL-1.1 for releases from 1.10.0 on, announced 2023-08-10",
+      "detail": "The LICENSE file in hashicorp/packer names Packer version 1.10.0 or later as the licensed work under the Business Source License 1.1; the current licensor is IBM. Earlier releases stay under MPL-2.0.",
+      "licence": {
+        "from": "MPL-2.0",
+        "to": "BUSL-1.1"
+      },
+      "affects": {
+        "from": "1.10.0"
+      },
+      "sources": [
+        {
+          "url": "https://www.hashicorp.com/en/blog/hashicorp-adopts-business-source-license",
+          "checked": "2026-11-03",
+          "note": "HashiCorp announcement, 2023-08-10"
+        },
+        {
+          "url": "https://github.com/hashicorp/packer/blob/main/LICENSE",
+          "checked": "2026-11-03",
+          "note": "licensed work: version 1.10.0 or later"
+        }
+      ],
+      "verified": "2026-11-03T13:30:00Z"
+    },
+    {
+      "id": "mongo",
+      "match": [
+        "docker.io/library/mongo"
+      ],
+      "kind": "RELICENSED",
+      "upstream": "mongodb/mongo",
+      "date": "2018-10-16",
+      "summary": "MongoDB Community Server releases from 2018-10-16 on are under SSPL-1.0, which the OSI has not approved; earlier releases stay under AGPL-3.0",
+      "detail": "Per MongoDB's FAQ the SSPL also covers patch releases of older versions made on or after that date, so an old tag can be affected too.",
+      "licence": {
+        "from": "AGPL-3.0",
+        "to": "SSPL-1.0"
+      },
+      "sources": [
+        {
+          "url": "https://www.mongodb.com/legal/licensing/server-side-public-license/faq",
+          "checked": "2026-11-03",
+          "note": "MongoDB SSPL FAQ"
+        },
+        {
+          "url": "https://www.mongodb.com/legal/licensing/server-side-public-license",
+          "checked": "2026-11-03",
+          "note": "licence text, version 1, October 16, 2018"
+        }
+      ],
+      "verified": "2026-11-03T13:30:00Z"
+    },
+    {
+      "id": "emqx-official",
+      "match": [
+        "docker.io/library/emqx"
+      ],
+      "kind": "REMOVED",
+      "upstream": "emqx/emqx",
+      "date": "2025-05-14",
+      "summary": "the Docker Official Image emqx stopped being published; EMQX 5.9.0 and later are only on docker.io/emqx/emqx and docker.io/emqx/emqx-enterprise (notice added 2025-05-14)",
+      "detail": "The docker-library notice says EMQX 5.9.0 unified the open source and enterprise editions under the Business Source License 1.1.",
+      "replacement": {
+        "text": "docker.io/emqx/emqx, which is licensed under BUSL-1.1",
+        "source": "https://github.com/docker-library/docs/blob/master/emqx/deprecated.md"
+      },
+      "sources": [
+        {
+          "url": "https://github.com/docker-library/docs/blob/master/emqx/deprecated.md",
+          "checked": "2026-11-03",
+          "note": "notice added in docker-library/docs on 2025-05-14"
+        }
+      ],
+      "verified": "2026-11-03T13:30:00Z"
+    },
+    {
+      "id": "emqx",
+      "match": [
+        "docker.io/emqx/emqx"
+      ],
+      "kind": "NON_OSI",
+      "upstream": "emqx/emqx",
+      "date": "2025-05-02",
+      "summary": "EMQX 5.9.0 and later are licensed under BUSL-1.1, which the OSI has not approved (release e5.9.0 on 2025-05-02)",
+      "licence": {
+        "to": "BUSL-1.1"
+      },
+      "affects": {
+        "from": "5.9.0"
+      },
+      "sources": [
+        {
+          "url": "https://github.com/emqx/emqx/blob/master/LICENSE",
+          "checked": "2026-11-03",
+          "note": "licensed work: EMQX version 5.9.0 or later"
+        },
+        {
+          "url": "https://github.com/emqx/emqx/releases/tag/e5.9.0",
+          "checked": "2026-11-03",
+          "note": "release date"
+        }
+      ],
+      "verified": "2026-11-03T13:30:00Z"
+    },
+    {
+      "id": "mongo-express",
+      "match": [
+        "docker.io/library/mongo-express"
+      ],
+      "kind": "DEPRECATED",
+      "upstream": "mongo-express/mongo-express",
+      "date": "2026-02-06",
+      "summary": "the Docker Official Image mongo-express is deprecated for maintainer inactivity (last updated Apr 2024); the notice was added to docker-library/docs on 2026-02-06",
+      "sources": [
+        {
+          "url": "https://github.com/docker-library/docs/blob/master/mongo-express/deprecated.md",
+          "checked": "2026-11-03",
+          "note": "deprecation notice"
+        }
+      ],
+      "verified": "2026-11-03T13:30:00Z"
+    },
+    {
+      "id": "cockroach",
+      "match": [
+        "docker.io/cockroachdb/cockroach"
+      ],
+      "kind": "NON_OSI",
+      "upstream": "cockroachdb/cockroach",
+      "date": "2024-11-18",
+      "summary": "CockroachDB moved to a single proprietary source-available licence, the CockroachDB Software License, on 2024-11-18 and retired the free Core edition",
+      "detail": "Cockroach Labs offers CockroachDB Enterprise Free for individuals and businesses under USD 10M in annual revenue. The licence requires a licence key to operate the software and requires telemetry for the free tier.",
+      "licence": {
+        "to": "CockroachDB Software License"
+      },
+      "sources": [
+        {
+          "url": "https://www.cockroachlabs.com/enterprise-license-update/",
+          "checked": "2026-11-03",
+          "note": "Cockroach Labs, Core offering eliminated November 18, 2024"
+        },
+        {
+          "url": "https://github.com/cockroachdb/cockroach/blob/master/LICENSE",
+          "checked": "2026-11-03",
+          "note": "current licence file"
+        }
+      ],
+      "verified": "2026-11-03T13:30:00Z"
+    }
+  ]
+}

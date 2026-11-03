@@ -1,0 +1,25 @@
+name: Wrong or missing data entry
+description: An entry in data/known.json is wrong, out of date, or an image should be listed
+labels: [data]
+body:
+  - type: input
+    id: image
+    attributes:
+      label: Image
+      description: The image name as written in a compose file, for example docker.io/example/app.
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: What changed
+      description: One or two sentences. Say what happened and on what date.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source URL
+      description: A page that says so, such as the upstream repo, its announcement or its licence file. Entries without a source are not accepted.
+    validations:
+      required: true

@@ -69,3 +69,22 @@ test('the same file given twice is scanned once', () => {
   const dir = writeTree(tmpdir(), { 'compose.yml': Y });
   assert.equal(findComposeFiles([dir, path.join(dir, 'compose.yml')]).files.length, 1);
 });
+
+test('--exclude keeps the walk out of a directory by name or by path, so a hung mount is never touched', () => {
+  const dir = writeTree(tmpdir(), { 'keep/compose.yml': Y, 'mount/compose.yml': Y, 'deep/mount2/compose.yml': Y });
+  const names = (ex) => findComposeFiles([dir], { exclude: ex }).files.map((f) => path.relative(dir, f)).sort();
+  assert.deepEqual(names(['mount']), ['deep/mount2/compose.yml', 'keep/compose.yml']);
+  assert.deepEqual(names([`${dir}/deep/*`, 'mount']), ['keep/compose.yml']);
+});
+
+test('a directory that cannot be read inside a walk is skipped and listed, not an error', { skip: process.getuid?.() === 0 }, () => {
+  const dir = writeTree(tmpdir(), { 'ok/compose.yml': Y, 'locked/compose.yml': Y });
+  fs.chmodSync(path.join(dir, 'locked'), 0o000);
+  try {
+    const r = findComposeFiles([dir]);
+    assert.deepEqual(r.files.map((f) => path.relative(dir, f)), ['ok/compose.yml']);
+    assert.deepEqual(r.errors, []);
+    assert.equal(r.skipped.length, 1);
+    assert.match(r.skipped[0].reason, /EACCES/);
+  } finally { fs.chmodSync(path.join(dir, 'locked'), 0o755); }
+});

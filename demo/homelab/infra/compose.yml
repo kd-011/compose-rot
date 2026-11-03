@@ -1,0 +1,29 @@
+name: infra
+
+services:
+  db:
+    image: bitnami/postgresql:${PG_TAG:-16}
+    environment:
+      - POSTGRESQL_PASSWORD=change-me
+
+  objects:
+    image: quay.io/minio/minio:${MINIO_TAG:-RELEASE.2025-04-22T22-12-26Z}
+    command: server /data
+    profiles: ["storage"]
+
+  secrets:
+    image: hashicorp/vault:1.16
+
+  docs:
+    image: mongo:7
+  docs-ui:
+    image: mongo-express:1.0.2
+
+  proxy:
+    image: traefik:v3.1
+    ports:
+      - "80:80"
+      - "443:443"
+
+  cache:
+    image: redis:7-alpine

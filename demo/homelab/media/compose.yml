@@ -1,0 +1,26 @@
+# Media stack. Written years ago, touched whenever something broke.
+x-linuxserver: &lsio
+  restart: unless-stopped
+  environment:
+    PUID: 1000
+    PGID: 1000
+    TZ: Australia/Perth
+
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:10.10
+    restart: unless-stopped
+    ports: ["8096:8096"]
+
+  sonarr:
+    <<: *lsio
+    image: lscr.io/linuxserver/sonarr:latest
+
+  updater:
+    image: containrrr/watchtower
+    command: --interval 3600
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  # photos:
+  #   image: ghcr.io/example/photos:3

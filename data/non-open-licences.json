@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "note": "Licences reported as NON_OSI by --online. An SPDX id is listed only if the SPDX list marks it isOsiApproved false and it restricts use or resale. Anything not listed is never flagged.",
+  "spdxList": {
+    "url": "https://github.com/spdx/license-list-data/blob/main/json/licenses.json",
+    "version": "8791eda",
+    "released": "2026-10-28T00:00:00Z",
+    "checked": "2026-11-03"
+  },
+  "licences": [
+    {
+      "id": "BUSL-1.1",
+      "name": "Business Source License 1.1"
+    },
+    {
+      "id": "SSPL-1.0",
+      "name": "Server Side Public License, v 1"
+    },
+    {
+      "id": "Elastic-2.0",
+      "name": "Elastic License 2.0"
+    },
+    {
+      "id": "FSL-1.1-ALv2",
+      "name": "Functional Source License, Version 1.1, ALv2 Future License"
+    },
+    {
+      "id": "FSL-1.1-MIT",
+      "name": "Functional Source License, Version 1.1, MIT Future License"
+    },
+    {
+      "id": "PolyForm-Noncommercial-1.0.0",
+      "name": "PolyForm Noncommercial License 1.0.0"
+    },
+    {
+      "id": "PolyForm-Small-Business-1.0.0",
+      "name": "PolyForm Small Business License 1.0.0"
+    },
+    {
+      "id": "Commons-Clause",
+      "name": "Commons Clause License Condition v1.0",
+      "note": "Not an SPDX licence id. Its own FAQ says software under it should not be called open source.",
+      "source": "https://commonsclause.com/"
+    }
+  ]
+}

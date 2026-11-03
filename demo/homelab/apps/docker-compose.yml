@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  dashboard:
+    image: ghcr.io/ajnart/homarr:latest
+  containers-ui:
+    image: fnsys/dockhand:latest
+  monitor:
+    image: grafana/grafana:11.2.0
+  scratch:
+    build: ./scratch
+  web:
+    image: nginx:1.27

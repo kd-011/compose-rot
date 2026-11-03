@@ -1,0 +1,30 @@
+name: Bug report
+description: compose-rot flagged an image it should not have, missed one, or crashed on a file
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: The command you ran and its full output. Take out anything you don't want public.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: compose
+    attributes:
+      label: The compose snippet
+      description: The smallest piece of the compose file that shows it, with secrets taken out.
+      render: yaml
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: The output of `compose-rot --version` and of `node --version`.
+    validations:
+      required: true

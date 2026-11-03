@@ -276,3 +276,39 @@ test('offline never touches the network', async () => {
     assert.equal(gh.requests.length + reg.requests.length, 0);
   } finally { await reg.close(); await gh.close(); }
 });
+
+test('a registry that answers 429 once is retried', async () => {
+  let n = 0;
+  const reg = await stubServer((req, res) => {
+    n++;
+    if (n === 1) return json(res, 429, { errors: [{ code: 'TOOMANYREQUESTS' }] }, { 'retry-after': '1' });
+    json(res, 404, { errors: [{ code: 'NAME_UNKNOWN' }] });
+  });
+  const gh = await githubStub({});
+  try {
+    const r = await scanOnline(compose('example/app'), { gh, reg: { url: reg.url } });
+    assert.ok(n >= 2, `only ${n} request(s)`);
+    assert.match(r.unknown[0].reason, /404/);
+  } finally { await reg.close(); await gh.close(); }
+});
+
+test('every image whose upstream was found is listed as resolved, findings or not', async () => {
+  const reg = await registryStub({ 'example/fine': { source: 'https://github.com/example/fine' } });
+  const gh = await githubStub({ 'example/fine': { full_name: 'example/fine', archived: false, pushed_at: RECENT, license: { spdx_id: 'MIT' } } });
+  try {
+    const r = await scanOnline(compose('example/fine:1'), { gh, reg });
+    assert.deepEqual(r.findings, []);
+    assert.equal(r.resolved.length, 1);
+    assert.equal(r.resolved[0].upstream.repo, 'example/fine');
+    assert.equal(r.resolved[0].upstream.via, 'oci-label');
+    assert.equal(r.resolved[0].live.licence, 'MIT');
+  } finally { await reg.close(); await gh.close(); }
+});
+
+test('BSL-1.0 (Boost) is an OSI licence and is not mistaken for BUSL-1.1', async () => {
+  const reg = await registryStub({ 'example/app': { source: 'https://github.com/example/app' } });
+  const gh = await githubStub({ 'example/app': { full_name: 'example/app', archived: false, pushed_at: RECENT, license: { spdx_id: 'BSL-1.0' } } });
+  try {
+    assert.deepEqual((await scanOnline(compose('example/app'), { gh, reg })).findings, []);
+  } finally { await reg.close(); await gh.close(); }
+});

@@ -87,6 +87,11 @@ const TABLE = {
     ['image: alpine', 'b', 'alpine'],
   ],
   '18-nulls-and-empties.yml': [['image: nginx', 'real', 'nginx']],
+  // Found by running the tool on a real project: a double-quoted string wrapped inside a flow list.
+  '19-flow-multiline-quoted.yml': [
+    ['image: ghcr.io/example/api:2.3', 'api', 'ghcr.io/example/api:2.3'],
+    ['image: example/other:1', 'other', 'example/other:1'],
+  ],
 };
 
 for (const [file, expected] of Object.entries(TABLE)) {
