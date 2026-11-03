@@ -13,7 +13,7 @@ It reads `image:` lines in compose files and nothing else. It does not look insi
 
 ## The data file
 
-- Offline mode knows only what `data/known.json` says. It has a few dozen entries. A clean run means none of your images are in the file. It does not mean they are healthy.
+- Offline mode knows only what `data/known.json` says. It has a few dozen entries. A clean run means none of your images are in the file.
 - Every entry was true on the date it was checked and may not be now. A repo can be unarchived and a licence can change back. Each entry carries the date it was checked so you can judge that.
 - Tag handling is thin. Only entries with `affects.from` look at the tag, and only for a tag that starts with a number. The MongoDB entry applies to every tag, including old ones released before the licence change.
 - Entries mostly name the image as it is on Docker Hub, ghcr.io or quay.io. The same software on a registry that is not listed is not matched.
@@ -26,12 +26,12 @@ It reads `image:` lines in compose files and nothing else. It does not look insi
 - GitHub's `archived` flag says the repo is read-only. The API does not say when it was archived, so online findings use the date of the last push. A last push on any branch counts, so a repo can look recent when its main branch is quiet.
 - STALE is a count of months since the last push. Plenty of finished software has no recent pushes.
 - The licence is the one GitHub detects for the repo's default branch, not for the tag you run. A relicensing that applies from a later version shows up on an image that is still on the old version. A repo with several licence files, or a custom licence, is reported as `NOASSERTION`, which compose-rot lists as unknown.
-- Only a short list of licences is flagged, in `data/non-open-licences.json`. A source-available licence that is not on it passes without comment. AGPL and other OSI-approved licences are never flagged, even where a company dislikes them.
+- Only a short list of licences is flagged, in `data/non-open-licences.json`. A source-available licence that is not on it passes without comment. AGPL and other OSI-approved licences are never flagged.
 - Docker Hub and GitHub rate limits apply. Without `GITHUB_TOKEN`, GitHub allows 60 requests an hour.
 
 ## Wording
 
-A finding states a fact with a date and a link. It does not say whether you should do anything about it. Many of these projects are fine to run for years after an archive, and a licence such as BUSL-1.1 leaves most homelab uses open. What it means for you is your call, and for a licence it is a question for the licence text.
+A finding states a fact with a date and a link and leaves the decision to you. What a licence allows is a question for the licence text.
 
 ## The YAML reader
 

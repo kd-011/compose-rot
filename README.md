@@ -56,11 +56,11 @@ A licence GitHub cannot identify (`NOASSERTION`) is listed as unknown. Without `
 
 ## What the findings mean
 
-REMOVED means the image or its free catalogue is gone or moved. ARCHIVED means the upstream repo is read-only. DEPRECATED means the maintainer or registry has marked it so. RELICENSED means the licence changed, and the finding names both. NON_OSI means the licence is one the OSI has not approved. The wording states a fact and a date. It does not say what you should do. [docs/reference.md](docs/reference.md) has each kind in full.
+REMOVED means the image or its free catalogue is gone or moved. ARCHIVED means the upstream repo is read-only. DEPRECATED means the maintainer or registry has marked it so. RELICENSED means the licence changed, and the finding names both. NON_OSI means the licence is one the OSI has not approved. The wording states a fact and a date and leaves the decision to you. [docs/reference.md](docs/reference.md) has each kind in full.
 
 ## Compared with other tools
 
-Renovate and Diun tell you when a newer tag exists. Trivy, Grype and Docker Scout report vulnerabilities in what you run. I searched GitHub and the web on 2026-11-03 and found no tool that takes a compose file and reports the upstream's archived or licence status. If one exists, tell me.
+Renovate and Diun tell you when a newer tag exists. Trivy, Grype and Docker Scout report vulnerabilities in what you run. I searched GitHub and the web on 2026-11-03 and found no tool that takes a compose file and reports the upstream's archived or licence status.
 
 ## When not to use it
 

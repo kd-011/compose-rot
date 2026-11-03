@@ -69,7 +69,7 @@ STALE: no push to the upstream repo in 24 months (configurable). Online mode onl
 
 UNKNOWN: online mode could not find or read the upstream. Shown only with `--verbose` in the text report, and always in the JSON `unknown` list.
 
-REMOVED, DEPRECATED and NON_OSI are wider than the list in the project brief. A removed catalogue and an archived repo are different events, and a licence that was never open is different from one that changed. Mixing them under one label would make the report less accurate.
+A removed catalogue, an archived repo and a licence that was never open are different events, so each gets its own kind.
 
 ## Online mode
 

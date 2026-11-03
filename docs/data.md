@@ -35,7 +35,7 @@ upstream: optional. The GitHub `owner/repo` that online mode should ask about. L
 
 date: the date of the event, as `YYYY-MM-DD`. For an archived repo, the date on the repository banner. For a licence change, the date it was announced or took effect.
 
-summary: one factual sentence saying what happened and when. No judgement words. "upstream repo archived on 2026-02-10" is right. Words that tell the reader how to feel about the project are not. A test rejects a few of them.
+summary: one factual sentence saying what happened and when. No judgement words. "upstream repo archived on 2026-02-10" is right. Words that tell the reader how to feel about the project are out, and a test rejects a few of them.
 
 detail: optional. More context, or caveats such as a date that two sources give differently.
 
@@ -54,7 +54,7 @@ affects: optional, `{ "from": "1.15.0" }`. The entry applies only to tags at or 
 Open a pull request that edits `data/known.json`.
 
 1. Find the page that says what happened. The upstream repo's banner, its README notice or its licence file are the best sources. A news article can go in as a second source. A claim that only an article makes is weaker, so say that in `detail`.
-2. Open the page yourself and write today's date in `checked`. The tests check that the date is a real date, not that you opened the page.
+2. Open the page yourself and write today's date in `checked`. The tests can only check that the date is a real one.
 3. Write one factual sentence, with the date, for `summary`.
 4. Run `node --test`. `test/known-data.test.mjs` fails if an entry has no source URL, no checked date or no verified timestamp.
 
@@ -64,7 +64,7 @@ An entry that was true when it was added can stop being true: a repo gets unarch
 
 ## What is in the file
 
-Each entry's `sources` lists the pages that were opened and the date. The file was built on 2026-11-03 from pages opened that day. Where a lead from a news article did not match the project's own page, the entry follows the project's page. Dockhand is one example: an article described a move to BUSL-1.1, but the repo's licence file has been BUSL-1.1 since its first commit on 2025-12-28. What changed in September and October 2026 was the licence's terms, so the entry says that.
+The file was built on 2026-11-03 from pages opened that day, and each entry's `sources` lists them. Where a news article and the project's own page disagree, the entry follows the project's page. The Dockhand entry is one case: an article described a move to BUSL-1.1, but the repo's licence file has said BUSL-1.1 since its first commit on 2025-12-28, so the entry records the revisions to its terms in September and October 2026.
 
 ## The licence list
 
