@@ -1,0 +1,23 @@
+# Old style header, still common in the wild
+version: "3.8"
+
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    internal: true
+
+volumes:
+  data:
+  cache: {}
+
+services:
+  app:
+    image: ghcr.io/example/app:1.4.2
+    networks: [frontend, backend]
+    volumes:
+      - data:/var/lib/app
+  proxy:
+    image: traefik:v3.1
+    networks:
+      - frontend

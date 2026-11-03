@@ -1,0 +1,6 @@
+services:
+  crlf:
+    image: nginx:stable
+    command: ["nginx", "-g", "daemon off;"]
+  other:
+    image: "caddy:2"

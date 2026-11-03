@@ -1,0 +1,12 @@
+services:
+  "quoted":
+    "image": "nginx:1.26"
+  tagged:
+    image: !!str nginx:1.25
+  anchored:
+    image: &img postgres:15
+  reused:
+    image: *img
+  dotted.name:
+    image: example/dotted:1
+    container_name: a.b.c

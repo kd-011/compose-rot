@@ -1,0 +1,8 @@
+services:
+  nobody:
+  tilde: ~
+  empty-image:
+    image:
+  real:
+    image: nginx
+x-nothing:

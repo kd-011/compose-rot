@@ -1,0 +1,15 @@
+services:
+  a:
+    image: ${REGISTRY:-docker.io}/library/alpine:${ALPINE_TAG:-3.20}
+  b:
+    image: postgres:${PG_VERSION}
+  c:
+    image: ${WHOLE_IMAGE}
+  d:
+    image: "${REPO:-bitnami}/redis:${REDIS_TAG-7.2}"
+  e:
+    image: $SIMPLE_REPO/thing:1
+  f:
+    image: busybox:$$LITERAL
+  g:
+    image: ${MIXED:?must be set}

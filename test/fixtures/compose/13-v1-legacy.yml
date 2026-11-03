@@ -1,0 +1,8 @@
+web:
+  image: nginx:1.19
+  links:
+    - db
+db:
+  image: mysql:5.7
+  environment:
+    MYSQL_ROOT_PASSWORD: example

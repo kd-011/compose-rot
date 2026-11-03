@@ -1,0 +1,16 @@
+{
+  "name": "compose-rot",
+  "version": "0.1.0",
+  "description": "Scan docker compose files for images whose upstream is archived, removed or relicensed.",
+  "type": "module",
+  "license": "MIT",
+  "author": "kd-011",
+  "repository": { "type": "git", "url": "git+https://github.com/kd-011/compose-rot.git" },
+  "bugs": { "url": "https://github.com/kd-011/compose-rot/issues" },
+  "homepage": "https://github.com/kd-011/compose-rot#readme",
+  "keywords": ["docker", "docker-compose", "self-hosted", "homelab", "licence", "archived", "supply-chain"],
+  "bin": { "compose-rot": "bin/compose-rot.mjs" },
+  "files": ["bin", "src", "data", "demo", "docs", "LICENSE", "README.md", "CHANGELOG.md"],
+  "engines": { "node": ">=22" },
+  "scripts": { "test": "node --test" }
+}

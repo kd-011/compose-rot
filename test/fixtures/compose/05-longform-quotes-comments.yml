@@ -1,0 +1,16 @@
+services:
+  cache:
+    image: "redis:7" # cache for sessions
+  storage:
+    image:   'minio/minio:RELEASE.2025-04-22T22-12-26Z'  # pinned
+  pinned:
+    image: ghcr.io/org/app@sha256:0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+  both:
+    image: ghcr.io/org/tool:2.1@sha256:fedcba9876543210fedcba9876543210fedcba9876543210fedcba9876543210
+  noisy:
+    image: nginx # comment with: a colon in it
+  hash:
+    image: example/odd#tag:1
+  # image: commented/out:1
+  # gone:
+  #   image: also/commented:2

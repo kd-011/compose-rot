@@ -1,0 +1,10 @@
+services:
+  a:
+    image: busybox
+    command:
+    - sleep
+    - "3600"
+    depends_on:
+    - b
+  b:
+    image: alpine

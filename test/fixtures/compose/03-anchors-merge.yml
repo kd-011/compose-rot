@@ -1,0 +1,22 @@
+x-common: &common
+  restart: unless-stopped
+  logging:
+    driver: json-file
+    options:
+      max-size: "10m"
+
+x-app: &app
+  <<: *common
+  image: ghcr.io/example/app:1.2.3
+  environment:
+    MODE: production
+
+services:
+  app1:
+    <<: *app
+  app2:
+    <<: *app
+    image: ghcr.io/example/app:2.0.0   # own image wins over the merged one
+  worker:
+    <<: [*common]
+    image: ghcr.io/example/worker

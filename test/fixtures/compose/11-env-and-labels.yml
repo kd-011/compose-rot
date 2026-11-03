@@ -1,0 +1,16 @@
+services:
+  app:
+    image: ghcr.io/example/app:3
+    environment:
+      - KEY=value
+      - "URL=http://example.test:8080/path?x=1"
+      - "ODD: with colon"
+      - EMPTY=
+    labels:
+      traefik.http.routers.app.rule: "Host(`app.example.test`)"
+      com.example.url: http://example.test/
+    ports:
+      - 8080:80
+      - "127.0.0.1:2222:22/tcp"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]

@@ -1,0 +1,14 @@
+services:
+  inline: {image: nginx:1.25, restart: always, ports: ["80:80", "443:443"]}
+  mixed:
+    image: redis:7.2
+    environment: {A: 1, B: "x y", C: 'it''s'}
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+  multiline:
+    image: mariadb:11
+    command: [
+      "--max-connections=200",
+      "--character-set-server=utf8mb4"
+    ]

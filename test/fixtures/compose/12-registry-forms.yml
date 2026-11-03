@@ -1,0 +1,19 @@
+services:
+  local:
+    image: localhost:5000/app:dev
+  private:
+    image: registry.example.com:8443/team/app:1
+  explicit-hub:
+    image: docker.io/library/nginx
+  index-hub:
+    image: index.docker.io/grafana/grafana:11.0.0
+  lscr:
+    image: lscr.io/linuxserver/sonarr:latest
+  quay:
+    image: quay.io/prometheus/prometheus:v2.53.0
+  gcr:
+    image: gcr.io/example-project/img:1
+  mcr:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+  deep:
+    image: ghcr.io/org/sub/path/tool:0.9

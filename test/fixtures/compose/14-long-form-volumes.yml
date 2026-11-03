@@ -1,0 +1,24 @@
+services:
+  app:
+    image: example/app:5
+    deploy:
+      resources:
+        limits:
+          cpus: "0.50"
+          memory: 256M
+    volumes:
+      - type: bind
+        source: ./data
+        target: /data
+        read_only: true
+      - type: volume
+        source: cache
+        target: /cache
+    configs:
+      - source: app_config
+        target: /etc/app.conf
+configs:
+  app_config:
+    file: ./app.conf
+volumes:
+  cache:

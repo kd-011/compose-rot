@@ -1,0 +1,7 @@
+services:
+  folded-image:
+    image: >-
+      ghcr.io/example/folded:1.0
+  quoted-wrap:
+    image: "ghcr.io/example/\
+      wrapped:2.0"

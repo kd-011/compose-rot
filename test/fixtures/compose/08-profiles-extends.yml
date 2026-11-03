@@ -1,0 +1,20 @@
+services:
+  base:
+    image: example/base:1
+    profiles: [never]
+  debug:
+    extends:
+      file: common.yml
+      service: base
+    profiles:
+      - debug
+  built:
+    build: ./src
+  built-and-named:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    image: registry.example.com:8443/team/built:latest
+  tools:
+    profiles: ["tools"]
+    image: example/tools:9

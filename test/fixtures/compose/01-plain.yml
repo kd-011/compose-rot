@@ -1,0 +1,13 @@
+services:
+  web:
+    image: nginx:1.27
+    ports:
+      - "80:80"
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_PASSWORD: example
+  cache:
+    image: "redis:7"
+  queue:
+    image: 'rabbitmq:3-management'
